@@ -1,70 +1,75 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import Slider from "react-slick";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import useAuth from "../../../hooks/useAuth";
 import "./Header.css";
 
 const Header = () => {
-    const settings = {
-        dots: true,
-        fade: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
+    const {user,logOut} = useAuth();
+    console.log(user);
+    const profilePic = user.photoURL;
+    console.log(profilePic);
     return (
-        <div>
+        <div className="sticky-lg-top bg-light py-1">
             <Navbar className="navbar" expand="lg">
             <Container fluid>
-                <Navbar.Brand>
-                    <div className="logo">
-                        <img className="w-100" src="https://i.ibb.co/K9LHz1v/logo-removebg-preview.png" alt="logo" />
-                    </div>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
+                <Link to="/home">
+                    <Navbar.Brand>
+                        <div className="mt-4 w-50">
+                            <img className="img-fluid" src="https://i.ibb.co/K9LHz1v/logo-removebg-preview.png" alt="logo" />
+                        </div>
+                    </Navbar.Brand>
+                </Link>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
                 <Nav
-                    className="mx-auto my-2 my-lg-0"
-                    style={{ maxHeight: '100px' }}
-                    navbarScroll
+                    className="mx-auto my-2 my-lg-0 navbar__container"
                 >
-                    <Nav.Link >Home</Nav.Link>
-                    <Nav.Link >Service</Nav.Link>
-                    <Nav.Link>Contract Us</Nav.Link>
-                    <Nav.Link>Gallery</Nav.Link>
-                    <Nav.Link>About Us</Nav.Link>
+                    <Nav.Link className="nav-item">
+                        <Link to="/home" class="nav-link">Home</Link>
+                    </Nav.Link>
+                    <Nav.Link class="nav-item">
+                        <HashLink to="/home#services" className="nav-link">Packages</HashLink>
+                    </Nav.Link>
+                    <Nav.Link class="nav-item">
+                        <HashLink className="nav-link" to="/home#about-us">About Us</HashLink>
+                    </Nav.Link>
+                    <Nav.Link class="nav-item">
+                        <HashLink className="nav-link" to="/home#contract-us">Contract Us</HashLink>
+                    </Nav.Link>
+                    {
+                        user.email && <Nav.Link className="nav-item">
+                            <Link className="nav-link" to="/myOrders">My Orders</Link>
+                        </Nav.Link>
+                    }
                 </Nav>
-                <div>
-                    <button className="btn__regular">Login</button>
-                    <button className="btn__register">Register</button>
+                <div className="d-flex justify-content-around align-items-center">
+                    {
+                        user.email && <div className="d-flex justify-content-around align-items-center">
+                            <div className="w-25">
+                                <img className="rounded-circle img-fluid" src={profilePic} alt="" />
+                            </div>
+                            <h5 className="mx-2">{user.displayName}</h5>
+                        </div>
+                    }
+                    {
+                        user.email && <Link to="/admin">
+                            <button className="btn__register">Admin</button>
+                        </Link>
+                    }
+                    {
+                        user.email ?
+                        <button type="button" onClick={logOut} className="btn__regular">LogOut</button>:
+                        <Link to="/login">
+                        <button className="btn__regular">Login</button>
+                        </Link>
+                    }
                 </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-        <Slider className="slider container" {...settings}>
-          <div className="banner-1">
-            <h1>Welcome to Our Hotel <br /> and Resort</h1>
-            <p>Travel is the movement of people between distant geographical locations.<br /> Travel can also include relatively short stays between <br /> successive movements, as in the case of tourism.</p>
-            <div className="text-center">
-              <button className="btn__regular">Get Booking</button>
-            </div>
-          </div>
-          <div className="banner-2">
-            <h1>It is perfect time <br /> to travel</h1>
-            <p>Reasons for traveling include recreation, holidays, tourism or vacationing, <br /> research travel, the gathering of information, visiting people, volunteer travel for charity, migration <br /> to begin life somewhere else, religious pilgrimages</p>
-            <div className="text-center">
-              <button className="btn__regular">Get Booking</button>
-            </div>
-          </div>
-          <div className="banner-3">
-            <h1>Discover your beautiful place <br /> with us</h1>
-            <p>Travel dates back to antiquity where wealthy Greeks and Romans would travel for leisure <br /> to their summer homes and villas in cities such as Pompeii and Baiae.While early travel tended to be <br /> slower, more dangerous, and more dominated by trade and migration</p>
-            <div className="text-center">
-              <button className="btn__regular">Get Booking</button>
-            </div>
-          </div>
-        </Slider>
       </div>
     );
 };

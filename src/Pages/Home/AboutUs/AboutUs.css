@@ -1,0 +1,9 @@
+.about__us__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about__us__item img {
+  width: 70px;
+  margin-right: 20px;
+}

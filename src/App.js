@@ -1,22 +1,44 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './Context/AuthProvider';
+import AdminDashBoard from './Pages/Admin/AdminDashBoard/AdminDashBoard';
 import Home from './Pages/Home/Home/Home';
+import Service from './Pages/Home/Service/Service';
+import MyOrders from './Pages/MyOrders/MyOrders';
+import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
+import Login from './Pages/Shared/Login/Login';
+import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Header/>
-        <Switch>
-          <Route exact path="/">
-            <Home/>
-          </Route>
-          <Route exact path="/home">
-            <Home/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header/>
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route exact path="/home">
+              <Home/>
+            </Route>
+            <Route exact path="/login">
+              <Login/>
+            </Route>
+            <PrivateRoute exact path="/services/:serviceId">
+              <Service/>
+            </PrivateRoute>
+            <PrivateRoute exact path="/admin">
+              <AdminDashBoard/>
+            </PrivateRoute>
+            <PrivateRoute path="/myOrders">
+              <MyOrders/>
+            </PrivateRoute>
+          </Switch>
+          <Footer/>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
