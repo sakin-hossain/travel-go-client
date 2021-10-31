@@ -53,7 +53,7 @@ const ManageAllOrders = () => {
     return (
         <div id="manageOrders" className="mt-5">
             <h1 className="my-3">There are All Orders</h1>
-            <Table striped bordered hover>
+            <Table striped bordered hover className=" table-responsive-sm">
                 <thead className="thead-dark">
                     <tr>
                         <th>Package Name</th>

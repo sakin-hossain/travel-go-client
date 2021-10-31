@@ -36,7 +36,7 @@ const MyOrders = () => {
     return (
         <div className="orders">
             <h1 className="text-center my-5">Here is Your Orders</h1>
-            <Table striped bordered hover>
+            <Table striped bordered hover className="table-responsive-sm">
                 <thead className="thead-dark">
                     <tr>
                         <th>Package Name</th>
