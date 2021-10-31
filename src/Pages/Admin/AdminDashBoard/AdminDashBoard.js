@@ -12,7 +12,7 @@ const AdminDashBoard = () => {
       <div className="dashboard">
         <div className="admin-box">
           <div className="row admin-container">
-            <div className="col-md-2 mt-5">
+            <div className="col-md-2 col-sm-12 mt-5">
               <div className="sidebar__container">
                 <ul>
                   <li
@@ -30,7 +30,7 @@ const AdminDashBoard = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-10 text-center  text-center">
+            <div className="col-md-10 col-sm-12 text-center  text-center">
               {control === "addPackages" && <AddPackages></AddPackages>}
               {control === "manageOrders" && <ManageAllOrders></ManageAllOrders>}
             </div>

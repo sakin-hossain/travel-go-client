@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Slide from 'react-reveal/Slide';
 import "./ContractUs.css";
+
 
 const ContractUs = () => {
     const { register, handleSubmit } = useForm();
@@ -8,8 +10,10 @@ const ContractUs = () => {
     return (
         <div id="contract-us">
             <div className="titles">
+            <Slide left>
                 <span>Contract Us</span>
                 <h2>If You Have Any Question <br />Drop A Message</h2>
+            </Slide>
                 <div className="container">
                     <div className="contract__form">
                     <form onSubmit={handleSubmit(onSubmit)}>

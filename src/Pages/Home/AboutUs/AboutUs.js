@@ -1,13 +1,16 @@
 import React from 'react';
+import Slide from 'react-reveal/Slide';
 import "./AboutUs.css";
 
 const AboutUs = () => {
     return (
         <div className="container" id="about-us">
-            <div className="titles">
-            <span>About Choose</span>
-            <h2>Every Time We Provide <br />Best Service</h2>
-            </div>
+            <Slide right>
+                <div className="titles">
+                    <span>About Us</span>
+                    <h2>Every Time We Provide <br />Best Service</h2>
+                </div>
+            </Slide>
             <div className="row">
                 <div className="col-md-5 col-sm-12">
                     <img className="img-fluid rounded" src="https://i.ibb.co/Rh4jXQH/why-choose-us.jpg" alt="about us" />

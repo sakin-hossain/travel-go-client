@@ -12,13 +12,13 @@ const Header = () => {
     const profilePic = user.photoURL;
     console.log(profilePic);
     return (
-        <div className="sticky-lg-top bg-light py-1">
-            <Navbar className="navbar" expand="lg">
+        <div className="sticky-top header__container bg-light py-1">
+            <Navbar className="navbar_container" expand="lg">
             <Container fluid>
                 <Link to="/home">
                     <Navbar.Brand>
-                        <div className="mt-4 w-50">
-                            <img className="img-fluid" src="https://i.ibb.co/K9LHz1v/logo-removebg-preview.png" alt="logo" />
+                        <div className="logo">
+                            <img width="100%" src="https://i.ibb.co/K9LHz1v/logo-removebg-preview.png" alt="logo" />
                         </div>
                     </Navbar.Brand>
                 </Link>

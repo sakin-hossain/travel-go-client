@@ -1,12 +1,17 @@
 import React from 'react';
+import Pulse from 'react-reveal/Pulse';
 import "./CompanyStatistics.css";
+
+
 const CompanyStatistics = () => {
     return (
         <div className="statistics__container mt-5">
-            <div className="titles">
-                <span>Company Statistics</span>
-                <h2 className="text-light">We Expert Our Goals and We Strive <br /> To Provide Best</h2>
-            </div>
+            <Pulse>
+                <div className="titles">
+                    <span>Company Statistics</span>
+                    <h2 className="text-light">We Expert Our Goals and We Strive <br /> To Provide Best</h2>
+                </div>
+            </Pulse>
                 <div className="statistics__container_item">
                     <div className="company__item">
                         <div>

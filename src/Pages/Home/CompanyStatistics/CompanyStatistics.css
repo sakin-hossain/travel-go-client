@@ -31,3 +31,12 @@
   font-size: 10px;
   color: #fc5c65;
 }
+
+@media (max-width: 480px) {
+  .statistics__container_item {
+    flex-direction: column;
+  }
+  .company__item {
+    margin: 15px 0;
+  }
+}

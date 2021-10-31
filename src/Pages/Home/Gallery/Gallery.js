@@ -1,4 +1,5 @@
 import React from 'react';
+import Slide from 'react-reveal/Slide';
 import Slider from 'react-slick';
 import "./Gallery.css";
 
@@ -13,11 +14,13 @@ const Gallery = () => {
         cssEase: "linear"
       };
     return (
-        <div className="gallery__container">
-            <div className="titles">
-                <span>Tour Gallery</span>
-                <h2 className="mx-2">Best Tourist's Shared <br /> Photos</h2>
-            </div>
+        <div className="gallery__container container">
+            <Slide left>
+                <div className="titles">
+                    <span>Tour Gallery</span>
+                    <h2 className="mx-2">Best Tourist's Shared <br /> Photos</h2>
+                </div>
+            </Slide>
             <Slider {...settings}>
                 <div className="img__container">
                     <img src="https://i.ibb.co/hRtPnXc/l1.jpg" alt="" />

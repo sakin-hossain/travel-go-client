@@ -5,10 +5,11 @@ import ContractUs from '../ContractUs/ContractUs';
 import Gallery from '../Gallery/Gallery';
 import Services from '../Services/Services';
 import HeroSlider from '../Slider/HeroSlider';
+import "./Home.css";
 
 const Home = () => {
     return (
-        <div>
+        <div className="home">
             <HeroSlider/>
             <Services/>
             <Gallery/>

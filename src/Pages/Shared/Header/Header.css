@@ -1,49 +1,40 @@
+.header__container {
+  font-family: "Ubuntu", sans-serif;
+}
+.navbar_container {
+  max-height: 70px;
+}
 .navbar__container > a {
   margin: 0 5px;
 }
 .navbar__container > a:hover {
   border-bottom: 2px solid #fc5c65;
 }
-.navbar {
-  height: 70px;
+.logo {
+  margin-top: 20px;
+  width: 110px;
 }
-.slider h1 {
-  text-align: center;
-  position: relative;
-  margin-top: 15%;
-  color: #211e3b;
-  font-weight: 700;
-  font-size: 50px;
-}
-.slider p {
-  text-align: center;
-  /* color: rgb(51, 32, 45); */
-  color: white;
-  font-weight: 300;
-  font-size: 20px;
-}
-.banner-1 {
+.banner {
   background-image: url("https://i.ibb.co/7ychr8q/banner-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.banner-2 {
-  background-image: url("https://i.ibb.co/Gt8htLD/banner.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 80vh;
-  object-fit: contain;
+.banner h1 {
+  text-align: center;
+  color: #211e3b;
+  font-weight: 700;
+  font-size: 50px;
 }
-.banner-3 {
-  background-image: url("https://i.ibb.co/h9h0PtG/banner-3.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 80vh;
-  object-fit: contain;
+.banner {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
 }
 .btn__regular {
   display: inline-block;
@@ -79,4 +70,14 @@
   background-color: #211e3b;
   color: white;
   font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .navbar_container {
+    min-height: 80px;
+  }
+  .logo {
+    margin-top: 0px;
+    width: 110px;
+  }
 }
