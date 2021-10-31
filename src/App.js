@@ -5,6 +5,7 @@ import AdminDashBoard from './Pages/Admin/AdminDashBoard/AdminDashBoard';
 import Home from './Pages/Home/Home/Home';
 import Service from './Pages/Home/Service/Service';
 import MyOrders from './Pages/MyOrders/MyOrders';
+import NotFound from "./Pages/NotFound/NotFound";
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import Login from './Pages/Shared/Login/Login';
@@ -35,6 +36,9 @@ function App() {
             <PrivateRoute path="/myOrders">
               <MyOrders/>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound/>
+            </Route>
           </Switch>
           <Footer/>
         </BrowserRouter>
