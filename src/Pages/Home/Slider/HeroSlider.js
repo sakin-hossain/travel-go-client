@@ -1,3 +1,4 @@
+import { HashLink } from "react-router-hash-link";
 import "./HeroSlider.css";
 
 const HeroSlider = () => {
@@ -7,7 +8,9 @@ const HeroSlider = () => {
             <h1>Welcome to Our Hotel <br /> and Resort</h1>
             <p>Travel is the movement of people between distant geographical locations.<br /> Travel can also include relatively short stays between <br /> successive movements, as in the case of tourism.</p>
             <div className="text-center">
-              <button className="btn__regular">Get Booking</button>
+              <HashLink to="/home#services">
+                <button className="btn__regular">Get Booking <i class="fas fa-arrow-right"></i></button>
+              </HashLink>
             </div>
           </div>
         </div>

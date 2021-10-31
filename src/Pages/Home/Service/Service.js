@@ -36,7 +36,7 @@ const Service = () => {
         })
     }
     return (
-        <div className="row package__container">
+        <div className="row book__container">
             <div className="col-md-8 col-sm-12 package__details">
                 <h1>{service?.title}</h1>
                 <div className="service__img">

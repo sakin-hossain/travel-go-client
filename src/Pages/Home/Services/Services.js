@@ -28,7 +28,7 @@ const Services = () => {
                             <div className="package__photo mx-auto">
                             <img className="" src={pk.image} alt="" />
                             </div>
-                            <div className="package__details">
+                            <div className="packages__details">
                                 <div>
                                     <h4>{pk.title}</h4>
                                     <h5>${pk.price}</h5>

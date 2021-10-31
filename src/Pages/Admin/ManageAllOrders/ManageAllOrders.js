@@ -39,8 +39,8 @@ const ManageAllOrders = () => {
             }
         })
         .then(res => res.json())
-        .then(result=> {
-            if(result.modifiedCount){
+    .then(result=> {
+            if(result.acknowledged){
                 alert('Approved Successfully');
                 setIsUpdated(true);
             }

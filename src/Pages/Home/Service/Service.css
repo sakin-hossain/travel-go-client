@@ -1,4 +1,4 @@
-.package__container {
+.book__container {
   font-family: "Ubuntu", sans-serif;
 }
 .package__details {
@@ -16,6 +16,10 @@
   width: 75%;
   font-weight: 600;
   color: #495057;
+}
+.package__details img {
+  border-radius: 5px;
+  margin-left: 10px;
 }
 .form__container {
   display: flex;

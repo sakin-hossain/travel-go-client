@@ -8,9 +8,7 @@ import "./Header.css";
 
 const Header = () => {
     const {user,logOut} = useAuth();
-    console.log(user);
     const profilePic = user.photoURL;
-    console.log(profilePic);
     return (
         <div className="sticky-top header__container bg-light py-1">
             <Navbar className="navbar_container" expand="lg">
