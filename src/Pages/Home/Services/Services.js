@@ -34,7 +34,7 @@ const Services = () => {
                                     <h5>${pk.price}</h5>
                                 </div>
                                 <div>
-                                <span>
+                                    <span>
                                     <Rating
                                     initialRating={pk.rating}
                                     emptySymbol={<i class="far fa-star icon__style"></i>}
@@ -45,7 +45,7 @@ const Services = () => {
                                         <button className="btn__regular mt-2">Book</button>
                                     </Link>
                                 </div>
-                                </div>
+                              </div>
                             </div>
                         </div>
                         )
